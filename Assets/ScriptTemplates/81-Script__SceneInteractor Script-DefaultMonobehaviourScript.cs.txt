@@ -1,0 +1,23 @@
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+internal sealed class #SCRIPTNAME# : BaseInteractor {
+    private const SceneLibrary.e_sceneIndex MYSELF = SceneLibrary.e_sceneIndex. ;
+    private SceneLibrary.e_sceneIndex _currentSceneIndex = SceneLibrary.e_sceneIndex. ;
+    public override SceneLibrary.e_sceneIndex GetSceneIdentifier => MYSELF;
+    public override void OnEnterScene(in Camera handler, in BaseInput input)
+    {
+        _cameraHandler = handler;
+        _inputHandler = input;
+    }
+    public override SceneLibrary.e_sceneIndex OnUpdate()
+    {
+        return _currentSceneIndex;
+    }
+    public override void OnExitScene()
+    {
+        _cameraHandler = null;
+        //NOTE: Unsubscribe from input events if necessary
+        _inputHandler = null;
+    }
+}

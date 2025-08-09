@@ -1,0 +1,7 @@
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "", menuName = "ScriptableObjects/")]
+public class #SCRIPTNAME# : ScriptableObject {
+    #NOTRIM#
+}
